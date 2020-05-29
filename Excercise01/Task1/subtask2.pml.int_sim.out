@@ -1,0 +1,17 @@
+  0:	proc  - (:root:) creates proc  0 (Authentication)
+spin: subtask2.pml:0, warning, proctype AuthenticationOld, 'byte  currentState' variable is never used (other than in print stmnts)
+spin: subtask2.pml:0, warning, proctype Authentication, 'byte  currentState' variable is never used (other than in print stmnts)
+spin: subtask2.pml:0, warning, proctype Authentication, 'mtype ev' variable is never used (other than in print stmnts)
+  1:	proc  0 (Authentication:1) subtask2.pml:57 (state 15)	[IF]
+
+Selected: 2
+
+  2:	proc  0 (Authentication:1) subtask2.pml:66 (state 11)	[(1)]
+
+timeout
+#processes: 1
+  2:	proc  0 (Authentication:1) subtask2.pml:66 (state 12)
+		Authentication(0):ev = 0
+		Authentication(0):currentState = 0
+		Authentication(0):fail = 0
+1 processes created
