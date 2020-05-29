@@ -1,0 +1,24 @@
+using statement merging
+  1:	proc  1 (watchdog:1) Authentication.pml:47 (state 1)	[assert((((fail==3)&&(currentState==2))||((currentState!=2)&&(fail<3))))]
+
+  2: proc 1 terminates
+  3:	proc  0 (Authentication:1) Authentication.pml:22 (state 1)	[((currentState==0))]
+
+Init  4:	proc  0 (Authentication:1) Authentication.pml:23 (state 2)	[printf('Init')]
+
+  5:	proc  0 (Authentication:1) Authentication.pml:5 (state 3)	[ev = login]
+		Authentication(0):ev = login
+
+  6:	proc  0 (Authentication:1) Authentication.pml:29 (state 13)	[(((fail<3)&&(ev==login)))]
+
+  7:	proc  0 (Authentication:1) Authentication.pml:29 (state 14)	[fail = (fail+1)]
+		fail = 1
+
+spin: trail ends after 7 steps
+#processes: 1
+		fail = 1
+		currentState = 0
+  7:	proc  0 (Authentication:1) Authentication.pml:29 (state 15)
+		Authentication(0):ev = login
+2 processes created
+Exit-Status 0

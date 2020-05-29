@@ -1,0 +1,37 @@
+  0:	proc  - (:root:) creates proc  0 (Authentication)
+  1:	proc  0 (Authentication:1) Authentication.pml:22 (state 1)	[((currentState==0))]
+
+Init  2:	proc  0 (Authentication:1) Authentication.pml:23 (state 2)	[printf('Init')]
+
+  3:	proc  0 (Authentication:1) Authentication.pml:5 (state 3)	[ev = login]
+		Authentication(0):ev = login
+
+  4:	proc  0 (Authentication:1) Authentication.pml:8 (state 6)	[.(goto)]
+
+  5:	proc  0 (Authentication:1) Authentication.pml:28 (state 13)	[(((fail<3)&&(ev==login)))]
+
+  6:	proc  0 (Authentication:1) Authentication.pml:28 (state 14)	[fail = (fail+1)]
+		fail = 1
+
+  7:	proc  0 (Authentication:1) Authentication.pml:28 (state 15)	[currentState = 0]
+
+  8:	proc  0 (Authentication:1) Authentication.pml:33 (state 17)	[.(goto)]
+
+  9:	proc  0 (Authentication:1) Authentication.pml:41 (state 37)	[.(goto)]
+
+ 10:	proc  0 (Authentication:1) Authentication.pml:22 (state 1)	[((currentState==0))]
+
+Init 11:	proc  0 (Authentication:1) Authentication.pml:23 (state 2)	[printf('Init')]
+
+ 12:	proc  0 (Authentication:1) Authentication.pml:6 (state 4)	[ev = logout]
+		Authentication(0):ev = logout
+
+ 13:	proc  0 (Authentication:1) Authentication.pml:8 (state 6)	[.(goto)]
+
+timeout
+#processes: 1
+		fail = 1
+		currentState = 0
+ 13:	proc  0 (Authentication:1) Authentication.pml:25 (state 16)
+		Authentication(0):ev = logout
+1 processes created

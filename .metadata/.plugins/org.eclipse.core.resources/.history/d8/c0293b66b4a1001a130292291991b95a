@@ -1,0 +1,13 @@
+mtype{n,o,s,w}
+
+mtype cross;
+proctype car(mtype start, mtype finish){
+}
+
+init{
+	mtype a;
+	a == 0;
+	printf("%d\n", a);
+	a = n;
+	printf("%d\n", a);
+}

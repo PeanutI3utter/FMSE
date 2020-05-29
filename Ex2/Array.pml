@@ -22,6 +22,19 @@ active proctype ARRAY() {
      for (i in a) {
        prod = prod * a[i]
      };
+     
+     /* a) */
+     assert(prod >= 0);
+     
+     /* b) */
+     for(i in a){
+     	assert(prod >= a[i]);
+     }
+     
+     /* c) */
+     select(i: 1 .. n);
+     assert(prod >= a[i]);
+     
      /* Print something nice */
      printf("The product is: %d\n", prod);     
 }

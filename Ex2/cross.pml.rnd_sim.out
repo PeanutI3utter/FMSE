@@ -1,0 +1,235 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) cross.pml:20 (state 1)	[i = 0]
+		:init:(0):i = 0
+
+  2:	proc  0 (:init::1) cross.pml:23 (state 8)	[.(goto)]
+
+  3:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 1
+  4:	proc  0 (:init::1) creates proc  1 (car)
+  4:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+  5:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 1
+
+  6:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 2
+  7:	proc  0 (:init::1) creates proc  2 (car)
+  7:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+  8:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 2
+
+  9:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 3
+ 10:	proc  0 (:init::1) creates proc  3 (car)
+ 10:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+ 11:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 3
+
+ 12:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 4
+ 13:	proc  0 (:init::1) creates proc  4 (car)
+ 13:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+ 14:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 4
+
+ 15:	proc  0 (:init::1) cross.pml:22 (state 5)	[else]
+
+ 16:	proc  0 (:init::1) cross.pml:22 (state 9)	[break]
+
+Starting watchdog with pid 5
+ 17:	proc  0 (:init::1) creates proc  5 (watchdog)
+ 17:	proc  0 (:init::1) cross.pml:23 (state 10)	[(run watchdog())]
+
+ 18:	proc  5 (watchdog:1) cross.pml:14 (state 1)	[assert((carsoncross<=1))]
+
+ 19:	proc  2 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 2
+		cross[3] = 0
+		cross[4] = 0
+
+ 20:	proc  3 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 2
+		cross[3] = 3
+		cross[4] = 0
+
+ 21:	proc  2 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 22:	proc  2 (car:1) cross.pml:8 (state 2)	[(((cross[4]==0)&&(cross[(((4+start)-1)%4)]==0)))]
+
+ 23:	proc  2 (car:1) cross.pml:8 (state 3)	[cross[4] = _pid]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 2
+		cross[3] = 3
+		cross[4] = 2
+
+ 24:	proc  2 (car:1) cross.pml:8 (state 4)	[carsoncross = (carsoncross+1)]
+		carsoncross = 1
+
+ 25:	proc  2 (car:1) cross.pml:8 (state 5)	[cross[start] = 0]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 2
+
+ 26:	proc  1 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 2
+
+ 27:	proc  2 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 28:	proc  2 (car:1) cross.pml:9 (state 7)	[((cross[4]==_pid))]
+
+ 29:	proc  2 (car:1) cross.pml:9 (state 8)	[cross[4] = 0]
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 0
+
+ 30:	proc  2 (car:1) cross.pml:9 (state 9)	[carsoncross = (carsoncross-1)]
+		carsoncross = 0
+
+ 31:	proc  3 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 32:	proc  2 (car:1) cross.pml:7 (state 14)	[break]
+
+ 33:	proc  4 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 4
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 0
+
+ 33:	proc  5 (watchdog:1) terminates
+ 34:	proc  4 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 35:	proc  1 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 36:	proc  3 (car:1) cross.pml:8 (state 2)	[(((cross[4]==0)&&(cross[(((4+start)-1)%4)]==0)))]
+
+ 37:	proc  3 (car:1) cross.pml:8 (state 3)	[cross[4] = _pid]
+		cross[0] = 4
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 3
+
+ 38:	proc  3 (car:1) cross.pml:8 (state 4)	[carsoncross = (carsoncross+1)]
+		carsoncross = 1
+
+ 39:	proc  3 (car:1) cross.pml:8 (state 5)	[cross[start] = 0]
+		cross[0] = 4
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 3
+
+ 40:	proc  3 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 41:	proc  3 (car:1) cross.pml:9 (state 7)	[((cross[4]==_pid))]
+
+ 42:	proc  3 (car:1) cross.pml:9 (state 8)	[cross[4] = 0]
+		cross[0] = 4
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+
+ 43:	proc  3 (car:1) cross.pml:9 (state 9)	[carsoncross = (carsoncross-1)]
+		carsoncross = 0
+
+ 44:	proc  4 (car:1) cross.pml:8 (state 2)	[(((cross[4]==0)&&(cross[(((4+start)-1)%4)]==0)))]
+
+ 45:	proc  4 (car:1) cross.pml:8 (state 3)	[cross[4] = _pid]
+		cross[0] = 4
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 4
+
+ 46:	proc  4 (car:1) cross.pml:8 (state 4)	[carsoncross = (carsoncross+1)]
+		carsoncross = 1
+
+ 47:	proc  4 (car:1) cross.pml:8 (state 5)	[cross[start] = 0]
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 4
+
+ 48:	proc  3 (car:1) cross.pml:7 (state 14)	[break]
+
+ 49:	proc  4 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 50:	proc  4 (car:1) cross.pml:9 (state 7)	[((cross[4]==_pid))]
+
+ 51:	proc  4 (car:1) cross.pml:9 (state 8)	[cross[4] = 0]
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+
+ 52:	proc  4 (car:1) cross.pml:9 (state 9)	[carsoncross = (carsoncross-1)]
+		carsoncross = 0
+
+ 53:	proc  1 (car:1) cross.pml:8 (state 2)	[(((cross[4]==0)&&(cross[(((4+start)-1)%4)]==0)))]
+
+ 54:	proc  1 (car:1) cross.pml:8 (state 3)	[cross[4] = _pid]
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 1
+
+ 55:	proc  1 (car:1) cross.pml:8 (state 4)	[carsoncross = (carsoncross+1)]
+		carsoncross = 1
+
+ 56:	proc  1 (car:1) cross.pml:8 (state 5)	[cross[start] = 0]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 1
+
+ 57:	proc  1 (car:1) cross.pml:11 (state 13)	[.(goto)]
+
+ 58:	proc  4 (car:1) cross.pml:7 (state 14)	[break]
+
+ 58:	proc  4 (car:1) terminates
+ 58:	proc  3 (car:1) terminates
+ 58:	proc  2 (car:1) terminates
+ 59:	proc  1 (car:1) cross.pml:9 (state 7)	[((cross[4]==_pid))]
+
+ 60:	proc  1 (car:1) cross.pml:9 (state 8)	[cross[4] = 0]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+
+ 61:	proc  1 (car:1) cross.pml:9 (state 9)	[carsoncross = (carsoncross-1)]
+		carsoncross = 0
+
+ 62:	proc  1 (car:1) cross.pml:7 (state 14)	[break]
+
+ 62:	proc  1 (car:1) terminates
+ 62:	proc  0 (:init::1) terminates
+6 processes created

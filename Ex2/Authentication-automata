@@ -1,0 +1,27 @@
+digraph p_Authentication {
+size="8,10";
+  GT [shape=box,style=dotted,label="Authentication"];
+  GT -> S36;
+	S36 -> S2  [color=black,style=bold,label="((currentState==0))"];
+	S36 -> S19  [color=black,style=bold,label="((currentState==1))"];
+	S36 -> S30  [color=black,style=bold,label="((currentState==2))"];
+	S2 -> S7  [color=black,style=solid,label="printf('Init')"];
+	S7 -> S16  [color=black,style=solid,label="ev = login"];
+	S7 -> S16  [color=black,style=solid,label="ev = logout"];
+	S16 -> S9  [color=black,style=bold,label="((fail>=3))"];
+	S16 -> S11  [color=black,style=bold,label="(((fail<3)&&(ev==login)))"];
+	S16 -> S14  [color=black,style=bold,label="(((fail<3)&&(ev==login)))"];
+	S9 -> S36  [color=black,style=bold,label="currentState = 2"];
+	S11 -> S12  [color=black,style=bold,label="fail = 0"];
+	S12 -> S36  [color=black,style=bold,label="currentState = 1"];
+	S14 -> S15  [color=black,style=bold,label="fail = (fail+1)"];
+	S15 -> S36  [color=black,style=bold,label="currentState = 0"];
+	S19 -> S24  [color=black,style=solid,label="printf('Authenticated')"];
+	S24 -> S27  [color=black,style=solid,label="ev = login"];
+	S24 -> S27  [color=black,style=solid,label="ev = logout"];
+	S27 -> S26  [color=black,style=solid,label="((ev==logout))"];
+	S26 -> S36  [color=black,style=bold,label="currentState = 0"];
+	S30 -> S35  [color=black,style=solid,label="printf('Locked')"];
+	S35 -> S36  [color=black,style=solid,label="ev = login"];
+	S35 -> S36  [color=black,style=solid,label="ev = logout"];
+}

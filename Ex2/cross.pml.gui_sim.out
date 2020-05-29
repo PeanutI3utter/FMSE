@@ -1,0 +1,235 @@
+using statement merging
+  1:	proc  0 (:init::1) cross.pml:20 (state 1)	[i = 0]
+		:init:(0):i = 0
+
+  2:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 1
+  3:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+  4:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 1
+
+  5:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 2
+  6:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+  7:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 2
+
+  8:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 3
+  9:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+ 10:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 3
+
+ 11:	proc  0 (:init::1) cross.pml:20 (state 2)	[((i<=3))]
+
+Starting car with pid 4
+ 12:	proc  0 (:init::1) cross.pml:21 (state 3)	[(run car())]
+
+ 13:	proc  0 (:init::1) cross.pml:20 (state 4)	[i = (i+1)]
+		:init:(0):i = 4
+
+ 14:	proc  0 (:init::1) cross.pml:22 (state 5)	[else]
+
+ 15:	proc  0 (:init::1) cross.pml:22 (state 9)	[break]
+
+Starting watchdog with pid 5
+ 16:	proc  0 (:init::1) cross.pml:23 (state 10)	[(run watchdog())]
+
+ 17:	proc  4 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 4
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+
+ 18:	proc  4 (car:1) cross.pml:9 (state 7)	[else]
+
+ 19:	proc  4 (car:1) cross.pml:9 (state 8)	[((cross[(((4+start)-1)%4)]==0))]	<merge 0 now @9>
+
+ 19:	proc  4 (car:1) cross.pml:9 (state 9)	[cross[4] = _pid]	<merge 13 now @10>
+		cross[0] = 4
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 4
+
+ 19:	proc  4 (car:1) cross.pml:9 (state 10)	[carsoncross = (carsoncross+1)]	<merge 13 now @11>
+		cross[0] = 4
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 4
+		carsoncross = 1
+
+ 19:	proc  4 (car:1) cross.pml:9 (state 11)	[cross[start] = 0]	<merge 13 now @13>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 4
+		carsoncross = 1
+
+ 20:	proc  4 (car:1) cross.pml:8 (state 2)	[((cross[4]==_pid))]	<merge 0 now @3>
+
+ 20:	proc  4 (car:1) cross.pml:8 (state 3)	[cross[4] = 0]	<merge 16 now @4>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+
+ 20:	proc  4 (car:1) cross.pml:8 (state 4)	[carsoncross = (carsoncross-1)]	<merge 16 now @16>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+		carsoncross = 0
+
+ 21:	proc  3 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 0
+
+ 22:	proc  3 (car:1) cross.pml:9 (state 7)	[else]
+
+ 23:	proc  3 (car:1) cross.pml:9 (state 8)	[((cross[(((4+start)-1)%4)]==0))]	<merge 0 now @9>
+
+ 23:	proc  3 (car:1) cross.pml:9 (state 9)	[cross[4] = _pid]	<merge 13 now @10>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 3
+
+ 23:	proc  3 (car:1) cross.pml:9 (state 10)	[carsoncross = (carsoncross+1)]	<merge 13 now @11>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 3
+		cross[4] = 3
+		carsoncross = 1
+
+ 23:	proc  3 (car:1) cross.pml:9 (state 11)	[cross[start] = 0]	<merge 13 now @13>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 3
+		carsoncross = 1
+
+ 24:	proc  3 (car:1) cross.pml:8 (state 2)	[((cross[4]==_pid))]	<merge 0 now @3>
+
+ 24:	proc  3 (car:1) cross.pml:8 (state 3)	[cross[4] = 0]	<merge 16 now @4>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+
+ 24:	proc  3 (car:1) cross.pml:8 (state 4)	[carsoncross = (carsoncross-1)]	<merge 16 now @16>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 0
+		carsoncross = 0
+
+ 25:	proc  2 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 2
+		cross[3] = 0
+		cross[4] = 0
+
+ 26:	proc  2 (car:1) cross.pml:9 (state 7)	[else]
+
+ 27:	proc  2 (car:1) cross.pml:9 (state 8)	[((cross[(((4+start)-1)%4)]==0))]	<merge 0 now @9>
+
+ 27:	proc  2 (car:1) cross.pml:9 (state 9)	[cross[4] = _pid]	<merge 13 now @10>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 2
+		cross[3] = 0
+		cross[4] = 2
+
+ 27:	proc  2 (car:1) cross.pml:9 (state 10)	[carsoncross = (carsoncross+1)]	<merge 13 now @11>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 2
+		cross[3] = 0
+		cross[4] = 2
+		carsoncross = 1
+
+ 27:	proc  2 (car:1) cross.pml:9 (state 11)	[cross[start] = 0]	<merge 13 now @13>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 2
+		carsoncross = 1
+
+ 28:	proc  1 (car:1) cross.pml:6 (state 1)	[cross[start] = _pid]
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 2
+
+ 29:	proc  1 (car:1) cross.pml:9 (state 7)	[else]
+
+ 30:	proc  1 (car:1) cross.pml:9 (state 8)	[((cross[(((4+start)-1)%4)]==0))]	<merge 0 now @9>
+
+ 30:	proc  1 (car:1) cross.pml:9 (state 9)	[cross[4] = _pid]	<merge 13 now @10>
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 1
+
+ 30:	proc  1 (car:1) cross.pml:9 (state 10)	[carsoncross = (carsoncross+1)]	<merge 13 now @11>
+		cross[0] = 0
+		cross[1] = 1
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 1
+		carsoncross = 2
+
+ 30:	proc  1 (car:1) cross.pml:9 (state 11)	[cross[start] = 0]	<merge 13 now @13>
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 1
+		carsoncross = 2
+
+spin: cross.pml:14, Error: assertion violated
+spin: text of failed assertion: assert(((carsoncross<=1)&&(carsoncross>=0)))
+#processes: 6
+		cross[0] = 0
+		cross[1] = 0
+		cross[2] = 0
+		cross[3] = 0
+		cross[4] = 1
+		carsoncross = 2
+ 31:	proc  5 (watchdog:1) cross.pml:14 (state 1)
+ 31:	proc  4 (car:1) cross.pml:11 (state 16)
+		car(4):start = 0
+ 31:	proc  3 (car:1) cross.pml:11 (state 16)
+		car(3):start = 3
+ 31:	proc  2 (car:1) cross.pml:7 (state 13)
+		car(2):start = 2
+ 31:	proc  1 (car:1) cross.pml:7 (state 13)
+		car(1):start = 1
+ 31:	proc  0 (:init::1) cross.pml:25 (state 12)
+		:init:(0):i = 4
+6 processes created
+Exit-Status 0

@@ -1,29 +1,9 @@
-!SESSION 2020-05-29 13:26:55.567 -----------------------------------------------
+!SESSION 2020-05-29 16:50:19.961 -----------------------------------------------
 eclipse.buildId=unknown
 java.version=1.8.0_252
 java.vendor=Private Build
 BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
 Command-line arguments:  -os linux -ws gtk -arch x86_64
 
-!ENTRY org.eclipse.core.resources 4 1 2020-05-29 14:26:49.540
-!MESSAGE Problems occurred while refreshing local changes
-!SUBENTRY 1 org.eclipse.core.resources 4 1 2020-05-29 14:26:49.541
-!MESSAGE Problems occurred while refreshing local changes
-!STACK 1
-org.eclipse.core.internal.resources.ResourceException: Errors occurred while refreshing resources with the local file system.
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refreshResource(FileSystemResourceManager.java:923)
-	at org.eclipse.core.internal.localstore.FileSystemResourceManager.refresh(FileSystemResourceManager.java:904)
-	at org.eclipse.core.internal.resources.Resource.refreshLocal(Resource.java:1705)
-	at org.eclipse.core.internal.refresh.RefreshJob.runInWorkspace(RefreshJob.java:167)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
-Contains: The project description file (.project) for 'test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
-!SUBENTRY 2 org.eclipse.core.resources 4 271 2020-05-29 14:26:49.542
-!MESSAGE Errors occurred while refreshing resources with the local file system.
-!SUBENTRY 3 org.eclipse.core.resources 4 567 2020-05-29 14:26:49.542
-!MESSAGE The project description file (.project) for 'test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
-
-!ENTRY org.eclipse.core.resources 2 2 2020-05-29 14:27:58.361
-!MESSAGE Save operation warnings.
-!SUBENTRY 1 org.eclipse.core.resources 2 234 2020-05-29 14:27:58.361
-!MESSAGE The project description file (.project) for 'test' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!ENTRY org.eclipse.core.resources 2 10035 2020-05-29 16:50:36.386
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
