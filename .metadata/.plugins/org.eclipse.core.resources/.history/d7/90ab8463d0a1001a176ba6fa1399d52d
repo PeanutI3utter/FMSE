@@ -1,0 +1,15 @@
+int isPrinting;
+
+active [2] proctype print()
+{
+
+		isPrinting < 1;
+		isPrinting++;
+	isPrinting--;
+}
+
+active proctype watchdog()
+{
+	assert(isPrinting <= 1);
+}
+	

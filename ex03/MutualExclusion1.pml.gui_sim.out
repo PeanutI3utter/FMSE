@@ -1,0 +1,33 @@
+using statement merging
+  1:	proc  2 (invariant:1) MutualExclusion1.pml:36 (state 1)	[assert((critical<=1))]
+
+  2: proc 2 terminates
+  3:	proc  1 (q:1) MutualExclusion1.pml:22 (state 1)	[turn = 2]
+		turn = 2
+
+  4:	proc  0 (p:1) MutualExclusion1.pml:8 (state 1)	[turn = 1]
+		turn = 1
+
+  5:	proc  1 (q:1) MutualExclusion1.pml:23 (state 2)	[((turn==1))]
+
+  6:	proc  1 (q:1) MutualExclusion1.pml:25 (state 3)	[critical = (critical+1)]
+		critical = 1
+
+  7:	proc  1 (q:1) MutualExclusion1.pml:26 (state 4)	[critical = (critical-1)]
+		critical = 0
+
+  8:	proc  1 (q:1) MutualExclusion1.pml:30 (state 7)	[else]
+
+  9: proc 1 terminates
+ 10:	proc  0 (p:1) MutualExclusion1.pml:9 (state 2)	[((turn==2))]
+
+	transition failed
+spin: trail ends after 10 steps
+#processes: 1
+		turn = 1
+		ploop = 1
+		qloop = 1
+		critical = 0
+ 10:	proc  0 (p:1) MutualExclusion1.pml:9 (state 2)
+3 processes created
+Exit-Status 0

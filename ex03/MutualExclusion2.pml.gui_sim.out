@@ -1,0 +1,23 @@
+spin: MutualExclusion2.pml:0, warning, global, 'bit   qloop' variable is never used (other than in print stmnts)
+spin: MutualExclusion2.pml:0, warning, global, 'byte  critical' variable is never used (other than in print stmnts)
+using statement merging
+  1:	proc  1 (q:1) MutualExclusion2.pml:24 (state 1)	[q2 = 1]
+		q2 = 1
+
+  2:	proc  0 (p:1) MutualExclusion2.pml:9 (state 1)	[q1 = 1]
+		q1 = 1
+
+  3:	proc  0 (p:1) MutualExclusion2.pml:10 (state 2)	[((q2==0))]
+
+	transition failed
+spin: trail ends after 3 steps
+#processes: 2
+		q1 = 1
+		q2 = 1
+		ploop = 0
+		qloop = 0
+		critical = 0
+  3:	proc  1 (q:1) MutualExclusion2.pml:25 (state 2)
+  3:	proc  0 (p:1) MutualExclusion2.pml:10 (state 2)
+2 processes created
+Exit-Status 0

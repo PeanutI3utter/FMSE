@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ex03/MutualExclusion1.pml.trail&apos; to &apos;MutualExclusion1noRe.pml.trail&apos;" description="Rename resource &apos;MutualExclusion1.pml.trail&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MutualExclusion1.pml.trail" name="MutualExclusion1noRe.pml.trail" stamp="1590831826243" updateReferences="true"/>
+</session>

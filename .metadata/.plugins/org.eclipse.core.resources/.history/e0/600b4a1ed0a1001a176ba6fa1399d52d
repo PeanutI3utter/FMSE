@@ -1,0 +1,15 @@
+bool isPrinting = false;
+
+active [2] proctype print()
+{
+	atomic
+	{
+		!isPrinting;
+		isPrinting = true;
+	}
+	isPrinting = false;
+}
+
+active watchdog()
+{
+	

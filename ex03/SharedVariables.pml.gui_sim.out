@@ -1,0 +1,29 @@
+using statement merging
+Starting p2 with pid 1
+  1:	proc  0 (:init::1) SharedVariables.pml:17 (state 1)	[(run p2())]
+
+  2:	proc  1 (p2:1) SharedVariables.pml:9 (state 1)	[tmp = (tmp+1)]
+		p2(1):tmp = 1
+
+Starting p2 with pid 2
+  3:	proc  0 (:init::1) SharedVariables.pml:18 (state 2)	[(run p2())]
+
+  4:	proc  2 (p2:1) SharedVariables.pml:9 (state 1)	[tmp = (tmp+1)]
+		p2(2):tmp = 1
+
+  5:	proc  2 (p2:1) SharedVariables.pml:10 (state 2)	[b = tmp]
+		b = 1
+
+  6: proc 2 terminates
+  7:	proc  1 (p2:1) SharedVariables.pml:10 (state 2)	[b = tmp]
+
+  8: proc 1 terminates
+  9:	proc  0 (:init::1) SharedVariables.pml:19 (state 3)	[((_nr_pr==1))]
+
+spin: SharedVariables.pml:20, Error: assertion violated
+spin: text of failed assertion: assert((b==2))
+#processes: 1
+		b = 1
+ 10:	proc  0 (:init::1) SharedVariables.pml:20 (state 4)
+3 processes created
+Exit-Status 0

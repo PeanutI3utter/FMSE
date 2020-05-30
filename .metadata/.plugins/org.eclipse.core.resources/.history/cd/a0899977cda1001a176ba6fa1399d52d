@@ -1,0 +1,59 @@
+byte b=0; 
+
+proctype p() {
+  b++
+}
+
+
+
+init { 
+  /* fill in */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+proctype p() {
+  byte tmp = b;
+  tmp ++;
+  b = tmp
+}
+
+*/

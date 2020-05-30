@@ -1,0 +1,17 @@
+int isPrinting;
+
+active [2] proctype print()
+{
+	atomic
+	{
+		isPrinting < 1;
+		isPrinting = true;
+	}
+	isPrinting = false;
+}
+
+active watchdog()
+{
+	isPrinting <= 1;
+}
+	
