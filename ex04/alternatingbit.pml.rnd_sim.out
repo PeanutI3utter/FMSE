@@ -1,0 +1,819 @@
+  0:	proc  - (:root:) creates proc  0 (sender)
+  0:	proc  - (:root:) creates proc  1 (receiver)
+  0:	proc  - (:root:) creates proc  2 (blackhole)
+  1:	proc  0 (sender:1) alternatingbit.pml:12 (state 3)	[msg = 2]
+		sender(0):msg = 2
+
+  2:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+  3:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 8)	[random = 7]
+		blackhole(2):random = 7
+
+  4:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+  5:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+  6:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+  6:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+  6:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!0,2]
+  6:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,2]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 2
+
+  7:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+  8:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+  8:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+  8:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!0]
+  8:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?0]
+		sender(0):ack = 0
+
+  9:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+ 10:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 1
+
+ 11:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 12:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 11)	[random = 10]
+		blackhole(2):random = 10
+
+ 13:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 14:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 15:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 16:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 17:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 1)	[random = 0]
+		blackhole(2):random = 0
+
+ 18:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 19:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+ 20:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 14)	[((random<1))]
+
+ 21:	proc  0 (sender:1) alternatingbit.pml:12 (state 4)	[msg = 3]
+		sender(0):msg = 3
+
+ 22:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+ 23:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+ 23:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+ 23:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!1,3]
+ 23:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,3]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 3
+
+ 24:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+ 24:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+ 24:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+ 24:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?1]
+		sender(0):ack = 1
+
+ 25:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+spin: alternatingbit.pml:16, Error: value (2->0 (1)) truncated in assignment
+ 26:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 0
+
+ 27:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+ 28:	proc  0 (sender:1) alternatingbit.pml:12 (state 5)	[msg = 4]
+		sender(0):msg = 4
+
+ 29:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+ 30:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+ 30:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 15)	[request?_,_]
+ 30:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!0,4]
+ 30:	proc  2 (blackhole:1) alternatingbit.pml:40 (state -)	[values: 1?0,0]
+
+ 31:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 4)	[random = 3]
+		blackhole(2):random = 3
+
+ 32:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 33:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 34:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 35:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 36:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 5)	[random = 4]
+		blackhole(2):random = 4
+
+ 37:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 38:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 39:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 40:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 41:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 10)	[random = 9]
+		blackhole(2):random = 9
+
+ 42:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 43:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 44:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 45:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 46:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 6)	[random = 5]
+		blackhole(2):random = 5
+
+ 47:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 48:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 49:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 50:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 51:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 11)	[random = 10]
+		blackhole(2):random = 10
+
+ 52:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 53:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 54:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 55:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 56:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 5)	[random = 4]
+		blackhole(2):random = 4
+
+ 57:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 58:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 59:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 60:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 61:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 2)	[random = 1]
+		blackhole(2):random = 1
+
+ 62:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 63:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+ 64:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+ 65:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+ 65:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+ 65:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!0,4]
+ 65:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,4]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 4
+
+ 66:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+ 66:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+ 66:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!0]
+ 66:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?0]
+		sender(0):ack = 0
+
+ 67:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+ 68:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 1
+
+ 69:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+ 70:	proc  0 (sender:1) alternatingbit.pml:12 (state 5)	[msg = 4]
+		sender(0):msg = 4
+
+ 71:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+ 72:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+ 72:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+ 72:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!1,4]
+ 72:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,4]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 4
+
+ 73: warning: too many params in next recv
+ 73:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+ 73:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 17)	[response?_,_]
+ 73:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+ 73:	proc  2 (blackhole:1) alternatingbit.pml:41 (state -)	[values: 2?0]
+
+ 74:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 11)	[random = 10]
+		blackhole(2):random = 10
+
+ 75:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 76:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 77:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 78:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 79:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 8)	[random = 7]
+		blackhole(2):random = 7
+
+ 80:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 81:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 82:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 83:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 84:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 9)	[random = 8]
+		blackhole(2):random = 8
+
+ 85:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 86:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 87:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 88:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 89:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 9)	[random = 8]
+		blackhole(2):random = 8
+
+ 90:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 91:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+ 92:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+ 93:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+ 94:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 2)	[random = 1]
+		blackhole(2):random = 1
+
+ 95:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+ 96:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+ 97:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+ 98:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+ 98:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+ 98:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!1,4]
+ 98:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,4]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 4
+
+ 99: warning: too many params in next recv
+ 99:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+ 99:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 17)	[response?_,_]
+ 99:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+ 99:	proc  2 (blackhole:1) alternatingbit.pml:41 (state -)	[values: 2?0]
+
+100:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 9)	[random = 8]
+		blackhole(2):random = 8
+
+101:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+102:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+103:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+104:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+105:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 3)	[random = 2]
+		blackhole(2):random = 2
+
+106:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+107:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+108:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+109:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+109:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+109:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!1,4]
+109:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,4]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 4
+
+110:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+110:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+110:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+110:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?1]
+		sender(0):ack = 1
+
+111:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+spin: alternatingbit.pml:16, Error: value (2->0 (1)) truncated in assignment
+112:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 0
+
+113:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+114:	proc  0 (sender:1) alternatingbit.pml:12 (state 3)	[msg = 2]
+		sender(0):msg = 2
+
+115:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+116:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+116:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+116:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!0,2]
+116:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,2]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 2
+
+117:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+117:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+117:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!0]
+117:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?0]
+		sender(0):ack = 0
+
+118:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+119:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 1
+
+120:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+121:	proc  0 (sender:1) alternatingbit.pml:12 (state 1)	[msg = 0]
+		sender(0):msg = 0
+
+122:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+123:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+123:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+123:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!1,0]
+123:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,0]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 0
+
+124: warning: too many params in next recv
+124:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+124:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 17)	[response?_,_]
+124:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+124:	proc  2 (blackhole:1) alternatingbit.pml:41 (state -)	[values: 2?0]
+
+125:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 8)	[random = 7]
+		blackhole(2):random = 7
+
+126:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+127:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+128:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+129:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+130:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 7)	[random = 6]
+		blackhole(2):random = 6
+
+131:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+132:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+133:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+134:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+135:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 11)	[random = 10]
+		blackhole(2):random = 10
+
+136:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+137:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+138:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+139:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+140:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 5)	[random = 4]
+		blackhole(2):random = 4
+
+141:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+142:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+143:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+144:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+145:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 8)	[random = 7]
+		blackhole(2):random = 7
+
+146:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+147:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+148:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+149:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+150:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 1)	[random = 0]
+		blackhole(2):random = 0
+
+151:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+152:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 14)	[((random<1))]
+
+timeout
+153:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+154:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+154:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+154:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!1,0]
+154:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,0]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 0
+
+155:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+155:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+155:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+155:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?1]
+		sender(0):ack = 1
+
+156:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+spin: alternatingbit.pml:16, Error: value (2->0 (1)) truncated in assignment
+157:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 0
+
+158:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+159:	proc  0 (sender:1) alternatingbit.pml:12 (state 1)	[msg = 0]
+		sender(0):msg = 0
+
+160:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+161:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+161:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 15)	[request?_,_]
+161:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!0,0]
+161:	proc  2 (blackhole:1) alternatingbit.pml:40 (state -)	[values: 1?0,0]
+
+162:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 4)	[random = 3]
+		blackhole(2):random = 3
+
+163:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+164:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+165:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+166:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+167:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 7)	[random = 6]
+		blackhole(2):random = 6
+
+168:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+169:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+170:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+171:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+172:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 6)	[random = 5]
+		blackhole(2):random = 5
+
+173:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+174:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+175:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+176:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+177:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 10)	[random = 9]
+		blackhole(2):random = 9
+
+178:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+179:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+180:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+181:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+182:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 1)	[random = 0]
+		blackhole(2):random = 0
+
+183:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+184:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+185:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+186:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+186:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+186:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!0,0]
+186:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,0]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 0
+
+187:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+187:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+187:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!0]
+187:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?0]
+		sender(0):ack = 0
+
+188:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+189:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 1
+
+190:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+191:	proc  0 (sender:1) alternatingbit.pml:12 (state 5)	[msg = 4]
+		sender(0):msg = 4
+
+192:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+193:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+193:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+193:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!1,4]
+193:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,4]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 4
+
+194: warning: too many params in next recv
+194:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+194:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 17)	[response?_,_]
+194:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+194:	proc  2 (blackhole:1) alternatingbit.pml:41 (state -)	[values: 2?0]
+
+195:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 7)	[random = 6]
+		blackhole(2):random = 6
+
+196:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+197:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+198:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+199:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+200:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 9)	[random = 8]
+		blackhole(2):random = 8
+
+201:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+202:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+203:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+204:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+205:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 10)	[random = 9]
+		blackhole(2):random = 9
+
+206:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+207:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+208:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+209:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+210:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 7)	[random = 6]
+		blackhole(2):random = 6
+
+211:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+212:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+213:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+214:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+215:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 6)	[random = 5]
+		blackhole(2):random = 5
+
+216:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+217:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+218:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+219:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+220:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 9)	[random = 8]
+		blackhole(2):random = 8
+
+221:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+222:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+223:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+224:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+225:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 10)	[random = 9]
+		blackhole(2):random = 9
+
+226:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+227:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+228:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+229:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+230:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 8)	[random = 7]
+		blackhole(2):random = 7
+
+231:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+232:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+233:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+234:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+235:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 1)	[random = 0]
+		blackhole(2):random = 0
+
+236:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+237:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 14)	[((random<1))]
+
+timeout
+238:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+239:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+239:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 15)	[request?_,_]
+239:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!1,4]
+239:	proc  2 (blackhole:1) alternatingbit.pml:40 (state -)	[values: 1?0,0]
+
+240:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 5)	[random = 4]
+		blackhole(2):random = 4
+
+241:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+242:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+243:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+244:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+245:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 4)	[random = 3]
+		blackhole(2):random = 3
+
+246:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+247:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+248:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+249:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+250:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 2)	[random = 1]
+		blackhole(2):random = 1
+
+251:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+252:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+253:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+254:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+254:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+254:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!1,4]
+254:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?1,4]
+		receiver(1):receivedWindow = 1
+		receiver(1):msg = 4
+
+255:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+255:	proc  0 (sender:1) alternatingbit.pml:14 (state 9)	[response?ack]
+255:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!1]
+255:	proc  0 (sender:1) alternatingbit.pml:14 (state -)	[values: 2?1]
+		sender(0):ack = 1
+
+256:	proc  0 (sender:1) alternatingbit.pml:16 (state 10)	[((ack==currentWindow))]
+
+spin: alternatingbit.pml:16, Error: value (2->0 (1)) truncated in assignment
+257:	proc  0 (sender:1) alternatingbit.pml:16 (state 11)	[currentWindow = (currentWindow+1)]
+		sender(0):currentWindow = 0
+
+258:	proc  0 (sender:1) alternatingbit.pml:16 (state 12)	[goto snd]
+
+259:	proc  0 (sender:1) alternatingbit.pml:12 (state 1)	[msg = 0]
+		sender(0):msg = 0
+
+260:	proc  0 (sender:1) alternatingbit.pml:12 (state 7)	[.(goto)]
+
+261:	proc  0 (sender:1) alternatingbit.pml:12 (state 8)	[request!currentWindow,msg]
+261:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+261:	proc  0 (sender:1) alternatingbit.pml:12 (state -)	[values: 1!0,0]
+261:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,0]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 0
+
+262: warning: too many params in next recv
+262:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+262:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 17)	[response?_,_]
+262:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!0]
+262:	proc  2 (blackhole:1) alternatingbit.pml:41 (state -)	[values: 2?0]
+
+263:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 9)	[random = 8]
+		blackhole(2):random = 8
+
+264:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+265:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+266:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+267:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+268:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 1)	[random = 0]
+		blackhole(2):random = 0
+
+269:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+270:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 14)	[((random<1))]
+
+timeout
+271:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+272:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+272:	proc  2 (blackhole:1) alternatingbit.pml:40 (state 15)	[request?_,_]
+272:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!0,0]
+272:	proc  2 (blackhole:1) alternatingbit.pml:40 (state -)	[values: 1?0,0]
+
+273:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 2)	[random = 1]
+		blackhole(2):random = 1
+
+274:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+275:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+276:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+277:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+277:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+277:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!0,0]
+277:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,0]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 0
+
+278: warning: too many params in next recv
+278:	proc  1 (receiver:1) alternatingbit.pml:30 (state 2)	[response!receivedWindow]
+278:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 17)	[response?_,_]
+278:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 2!0]
+278:	proc  2 (blackhole:1) alternatingbit.pml:41 (state -)	[values: 2?0]
+
+279:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 4)	[random = 3]
+		blackhole(2):random = 3
+
+280:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+281:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+282:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+283:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+284:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 8)	[random = 7]
+		blackhole(2):random = 7
+
+285:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+286:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+287:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+288:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+289:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 4)	[random = 3]
+		blackhole(2):random = 3
+
+290:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+291:	proc  2 (blackhole:1) alternatingbit.pml:42 (state 18)	[else]
+
+292:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 20)	[.(goto)]
+
+293:	proc  2 (blackhole:1) alternatingbit.pml:44 (state 21)	[goto randomizer]
+
+294:	proc  2 (blackhole:1) alternatingbit.pml:38 (state 3)	[random = 2]
+		blackhole(2):random = 2
+
+295:	proc  2 (blackhole:1) alternatingbit.pml:39 (state 13)	[.(goto)]
+
+296:	proc  2 (blackhole:1) alternatingbit.pml:41 (state 16)	[((random<3))]
+
+timeout
+297:	proc  0 (sender:1) alternatingbit.pml:19 (state 16)	[(timeout)]
+
+298:	proc  0 (sender:1) alternatingbit.pml:19 (state 17)	[request!currentWindow,msg]
+298:	proc  1 (receiver:1) alternatingbit.pml:30 (state 1)	[request?receivedWindow,msg]
+298:	proc  0 (sender:1) alternatingbit.pml:19 (state -)	[values: 1!0,0]
+298:	proc  1 (receiver:1) alternatingbit.pml:30 (state -)	[values: 1?0,0]
+		receiver(1):receivedWindow = 0
+		receiver(1):msg = 0

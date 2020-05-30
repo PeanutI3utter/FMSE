@@ -1,0 +1,49 @@
+  0:	proc  - (:root:) creates proc  0 (computer)
+  0:	proc  - (:root:) creates proc  1 (computer)
+  0:	proc  - (:root:) creates proc  2 (printer)
+  1:	proc  1 (computer:1) printer.pml:7 (state 1)	[printingChan!_pid]
+  1:	proc  2 (printer:1) printer.pml:16 (state 1)	[printingChan?rcv]
+  1:	proc  1 (computer:1) printer.pml:7 (state -)	[values: 1!1]
+  1:	proc  2 (printer:1) printer.pml:16 (state -)	[values: 1?1]
+		printer(2):rcv = 1
+
+  2:	proc  2 (printer:1) printer.pml:16 (state 2)	[isPrinting = (isPrinting+1)]
+		isPrinting = 1
+
+  3:	proc  2 (printer:1) printer.pml:17 (state 3)	[assert((isPrinting<2))]
+
+1
+  4:	proc  2 (printer:1) printer.pml:18 (state 4)	[printf('%d\\n',rcv)]
+
+  5:	proc  2 (printer:1) printer.pml:19 (state 5)	[isPrinting = (isPrinting-1)]
+		isPrinting = 0
+
+  6:	proc  2 (printer:1) printer.pml:21 (state 7)	[.(goto)]
+
+  7:	proc  0 (computer:1) printer.pml:7 (state 1)	[printingChan!_pid]
+  7:	proc  2 (printer:1) printer.pml:16 (state 1)	[printingChan?rcv]
+  7:	proc  0 (computer:1) printer.pml:7 (state -)	[values: 1!0]
+  7:	proc  2 (printer:1) printer.pml:16 (state -)	[values: 1?0]
+		printer(2):rcv = 0
+
+  8:	proc  2 (printer:1) printer.pml:16 (state 2)	[isPrinting = (isPrinting+1)]
+		isPrinting = 1
+
+  9:	proc  2 (printer:1) printer.pml:17 (state 3)	[assert((isPrinting<2))]
+
+0
+ 10:	proc  2 (printer:1) printer.pml:18 (state 4)	[printf('%d\\n',rcv)]
+
+ 11:	proc  2 (printer:1) printer.pml:19 (state 5)	[isPrinting = (isPrinting-1)]
+		isPrinting = 0
+
+ 12:	proc  2 (printer:1) printer.pml:21 (state 7)	[.(goto)]
+
+timeout
+#processes: 3
+		isPrinting = 0
+ 12:	proc  2 (printer:1) printer.pml:15 (state 6)
+		printer(2):rcv = 0
+ 12:	proc  1 (computer:1) printer.pml:8 (state 2)
+ 12:	proc  0 (computer:1) printer.pml:8 (state 2)
+3 processes created
